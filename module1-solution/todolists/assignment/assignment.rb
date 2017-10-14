@@ -10,12 +10,14 @@ class Assignment
       # accept a hash of user properties (`:username` and `:password_digest`) as an input parameter. Note these are 100% same as model class.
       # use the User Model class to create a new user in the DB
       # return an instance of the class with primary key (`id`), and dates (`created_at` and `updated_at`) assigned
+      User.create(username: params[:username], password_digest: params[:password_digest])
   end
 
   def create_todolist(params)
       # accept a hash of todolist properties (`:name` and `:due_date`) as an input parameter. Note these are not 100% the same as Model class.
       # use the TodoList Model class to create a new user in the DB
       # return an instance of the class with primary key (`id`), and dates (`created_at` and `updated_at`) assigned
+      TodoList.create(list_name: params[:name], list_due_date: params[:due_date])
   end
 
   #
