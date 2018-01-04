@@ -9,19 +9,19 @@ feature "Module 4 Pagination Test" do
 
     around :each do |example|
         if $continue
-            $continue = false 
-            example.run 
+            $continue = false
+            example.run
             $continue = true unless example.exception
         else
             example.skip
         end
     end
 
-    before :all do 
+    before :all do
         TodoItem.destroy_all
         TodoList.destroy_all
         User.destroy_all
-        load "#{Rails.root}/db/seeds.rb"  
+        load "#{Rails.root}/db/seeds.rb"
     end
 
     context "rq13" do
